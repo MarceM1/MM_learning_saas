@@ -1,0 +1,165 @@
+npm warn cleanup Failed to remove some directories [
+npm warn cleanup   [
+npm warn cleanup     'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\@rollup\\rollup-win32-x64-msvc',
+npm warn cleanup     [Error: ENOTEMPTY: directory not empty, rmdir 'C:\Users\Usuario\Desktop\JSMastery\learning_saas_app\node_modules\@rollup\rollup-win32-x64-msvc'] {
+npm warn cleanup       errno: -4051,
+npm warn cleanup       code: 'ENOTEMPTY',
+npm warn cleanup       syscall: 'rmdir',
+npm warn cleanup       path: 'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\@rollup\\rollup-win32-x64-msvc'
+npm warn cleanup     }
+npm warn cleanup   ],
+npm warn cleanup   [
+npm warn cleanup     'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\@sentry\\cli-win32-x64',
+npm warn cleanup     [Error: ENOTEMPTY: directory not empty, rmdir 'C:\Users\Usuario\Desktop\JSMastery\learning_saas_app\node_modules\@sentry\cli-win32-x64\bin'] {
+npm warn cleanup       errno: -4051,
+npm warn cleanup       code: 'ENOTEMPTY',
+npm warn cleanup       syscall: 'rmdir',
+npm warn cleanup       path: 'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\@sentry\\cli-win32-x64\\bin'
+npm warn cleanup     }
+npm warn cleanup   ],
+npm warn cleanup   [
+npm warn cleanup     'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\@rollup',
+npm warn cleanup     [Error: EPERM: operation not permitted, lstat 'C:\Users\Usuario\Desktop\JSMastery\learning_saas_app\node_modules\@rollup\rollup-win32-x64-msvc\rollup.win32-x64-msvc.node'] {
+npm warn cleanup       errno: -4048,
+npm warn cleanup       code: 'EPERM',
+npm warn cleanup       syscall: 'lstat',
+npm warn cleanup       path: 'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\@rollup\\rollup-win32-x64-msvc\\rollup.win32-x64-msvc.node'
+npm warn cleanup     }
+npm warn cleanup   ],
+npm warn cleanup   [
+npm warn cleanup     'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\@sentry\\bundler-plugin-core',
+npm warn cleanup     [Error: ENOTEMPTY: directory not empty, rmdir 'C:\Users\Usuario\Desktop\JSMastery\learning_saas_app\node_modules\@sentry\bundler-plugin-core\dist\cjs'] {
+npm warn cleanup       errno: -4051,
+npm warn cleanup       code: 'ENOTEMPTY',
+npm warn cleanup       syscall: 'rmdir',
+npm warn cleanup       path: 'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\@sentry\\bundler-plugin-core\\dist\\cjs'
+npm warn cleanup     }
+npm warn cleanup   ],
+npm warn cleanup   [
+npm warn cleanup     'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\@opentelemetry\\semantic-conventions',
+npm warn cleanup     [Error: EPERM: operation not permitted, unlink 'C:\Users\Usuario\Desktop\JSMastery\learning_saas_app\node_modules\@opentelemetry\semantic-conventions\build\src\experimental_attributes.d.ts'] {
+npm warn cleanup       errno: -4048,
+npm warn cleanup       code: 'EPERM',
+npm warn cleanup       syscall: 'unlink',
+npm warn cleanup       path: 'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\@opentelemetry\\semantic-conventions\\build\\src\\experimental_attributes.d.ts'
+npm warn cleanup     }
+npm warn cleanup   ],
+npm warn cleanup   [
+npm warn cleanup     'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\schema-utils\\node_modules\\ajv',
+npm warn cleanup     [Error: EBUSY: resource busy or locked, unlink 'C:\Users\Usuario\Desktop\JSMastery\learning_saas_app\node_modules\schema-utils\node_modules\ajv\dist\vocabularies\applicator\dependencies.js'] {
+npm warn cleanup       errno: -4082,
+npm warn cleanup       code: 'EBUSY',
+npm warn cleanup       syscall: 'unlink',
+npm warn cleanup       path: 'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\schema-utils\\node_modules\\ajv\\dist\\vocabularies\\applicator\\dependencies.js'
+npm warn cleanup     }
+npm warn cleanup   ],
+npm warn cleanup   [
+npm warn cleanup     'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\@opentelemetry\\instrumentation-http\\node_modules\\@opentelemetry\\semantic-conventions',
+npm warn cleanup     [Error: EPERM: operation not permitted, unlink 'C:\Users\Usuario\Desktop\JSMastery\learning_saas_app\node_modules\@opentelemetry\instrumentation-http\node_modules\@opentelemetry\semantic-conventions\build\esnext\experimental_attributes.js.map'] {
+npm warn cleanup       errno: -4048,
+npm warn cleanup       code: 'EPERM',
+npm warn cleanup       syscall: 'unlink',
+npm warn cleanup       path: 'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\@opentelemetry\\instrumentation-http\\node_modules\\@opentelemetry\\semantic-conventions\\build\\esnext\\experimental_attributes.js.map'
+npm warn cleanup     }
+npm warn cleanup   ],
+npm warn cleanup   [
+npm warn cleanup     'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\@opentelemetry\\instrumentation-pg\\node_modules\\@opentelemetry\\semantic-conventions',
+npm warn cleanup     [Error: EPERM: operation not permitted, unlink 'C:\Users\Usuario\Desktop\JSMastery\learning_saas_app\node_modules\@opentelemetry\instrumentation-pg\node_modules\@opentelemetry\semantic-conventions\build\esnext\experimental_attributes.js.map'] {
+npm warn cleanup       errno: -4048,
+npm warn cleanup       code: 'EPERM',
+npm warn cleanup       syscall: 'unlink',
+npm warn cleanup       path: 'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\@opentelemetry\\instrumentation-pg\\node_modules\\@opentelemetry\\semantic-conventions\\build\\esnext\\experimental_attributes.js.map'
+npm warn cleanup     }
+npm warn cleanup   ],
+npm warn cleanup   [
+npm warn cleanup     'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\@opentelemetry\\instrumentation-koa\\node_modules\\@opentelemetry\\semantic-conventions',
+npm warn cleanup     [Error: EPERM: operation not permitted, unlink 'C:\Users\Usuario\Desktop\JSMastery\learning_saas_app\node_modules\@opentelemetry\instrumentation-koa\node_modules\@opentelemetry\semantic-conventions\build\esnext\experimental_attributes.js.map'] {
+npm warn cleanup       errno: -4048,
+npm warn cleanup       code: 'EPERM',
+npm warn cleanup       syscall: 'unlink',
+npm warn cleanup       path: 'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\@opentelemetry\\instrumentation-koa\\node_modules\\@opentelemetry\\semantic-conventions\\build\\esnext\\experimental_attributes.js.map'
+npm warn cleanup     }
+npm warn cleanup   ],
+npm warn cleanup   [
+npm warn cleanup     'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\@opentelemetry',
+npm warn cleanup     [Error: EPERM: operation not permitted, unlink 'C:\Users\Usuario\Desktop\JSMastery\learning_saas_app\node_modules\@opentelemetry\semantic-conventions\build\src\experimental_attributes.d.ts'] {
+npm warn cleanup       errno: -4048,
+npm warn cleanup       code: 'EPERM',
+npm warn cleanup       syscall: 'unlink',
+npm warn cleanup       path: 'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\@opentelemetry\\semantic-conventions\\build\\src\\experimental_attributes.d.ts'
+npm warn cleanup     }
+npm warn cleanup   ],
+npm warn cleanup   [
+npm warn cleanup     'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\@opentelemetry\\instrumentation-mongoose\\node_modules',
+npm warn cleanup     [Error: EPERM: operation not permitted, unlink 'C:\Users\Usuario\Desktop\JSMastery\learning_saas_app\node_modules\@opentelemetry\instrumentation-mongoose\node_modules\@opentelemetry\semantic-conventions\build\src\experimental_metrics.js'] {
+npm warn cleanup       errno: -4048,
+npm warn cleanup       code: 'EPERM',
+npm warn cleanup       syscall: 'unlink',
+npm warn cleanup       path: 'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\@opentelemetry\\instrumentation-mongoose\\node_modules\\@opentelemetry\\semantic-conventions\\build\\src\\experimental_metrics.js'
+npm warn cleanup     }
+npm warn cleanup   ],
+npm warn cleanup   [
+npm warn cleanup     'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\@opentelemetry\\instrumentation-http',
+npm warn cleanup     [Error: EPERM: operation not permitted, unlink 'C:\Users\Usuario\Desktop\JSMastery\learning_saas_app\node_modules\@opentelemetry\instrumentation-http\node_modules\@opentelemetry\semantic-conventions\build\esnext\experimental_attributes.js.map'] {
+npm warn cleanup       errno: -4048,
+npm warn cleanup       code: 'EPERM',
+npm warn cleanup       syscall: 'unlink',
+npm warn cleanup       path: 'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\@opentelemetry\\instrumentation-http\\node_modules\\@opentelemetry\\semantic-conventions\\build\\esnext\\experimental_attributes.js.map'
+npm warn cleanup     }
+npm warn cleanup   ],
+npm warn cleanup   [
+npm warn cleanup     'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\@opentelemetry\\instrumentation-koa',
+npm warn cleanup     [Error: EPERM: operation not permitted, unlink 'C:\Users\Usuario\Desktop\JSMastery\learning_saas_app\node_modules\@opentelemetry\instrumentation-koa\node_modules\@opentelemetry\semantic-conventions\build\esnext\experimental_attributes.js.map'] {
+npm warn cleanup       errno: -4048,
+npm warn cleanup       code: 'EPERM',
+npm warn cleanup       syscall: 'unlink',
+npm warn cleanup       path: 'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\@opentelemetry\\instrumentation-koa\\node_modules\\@opentelemetry\\semantic-conventions\\build\\esnext\\experimental_attributes.js.map'
+npm warn cleanup     }
+npm warn cleanup   ],
+npm warn cleanup   [
+npm warn cleanup     'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\@opentelemetry\\instrumentation-pg',
+npm warn cleanup     [Error: EPERM: operation not permitted, unlink 'C:\Users\Usuario\Desktop\JSMastery\learning_saas_app\node_modules\@opentelemetry\instrumentation-pg\node_modules\@opentelemetry\semantic-conventions\build\esnext\experimental_attributes.js.map'] {
+npm warn cleanup       errno: -4048,
+npm warn cleanup       code: 'EPERM',
+npm warn cleanup       syscall: 'unlink',
+npm warn cleanup       path: 'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\@opentelemetry\\instrumentation-pg\\node_modules\\@opentelemetry\\semantic-conventions\\build\\esnext\\experimental_attributes.js.map'
+npm warn cleanup     }
+npm warn cleanup   ],
+npm warn cleanup   [
+npm warn cleanup     'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\@opentelemetry\\instrumentation-mongoose',
+npm warn cleanup     [Error: EPERM: operation not permitted, unlink 'C:\Users\Usuario\Desktop\JSMastery\learning_saas_app\node_modules\@opentelemetry\instrumentation-mongoose\node_modules\@opentelemetry\semantic-conventions\build\src\experimental_metrics.js'] {
+npm warn cleanup       errno: -4048,
+npm warn cleanup       code: 'EPERM',
+npm warn cleanup       syscall: 'unlink',
+npm warn cleanup       path: 'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\@opentelemetry\\instrumentation-mongoose\\node_modules\\@opentelemetry\\semantic-conventions\\build\\src\\experimental_metrics.js'
+npm warn cleanup     }
+npm warn cleanup   ],
+npm warn cleanup   [
+npm warn cleanup     'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\@sentry\\nextjs',
+npm warn cleanup     [Error: EPERM: operation not permitted, rmdir 'C:\Users\Usuario\Desktop\JSMastery\learning_saas_app\node_modules\@sentry\nextjs\node_modules\@sentry\core\build'] {
+npm warn cleanup       errno: -4048,
+npm warn cleanup       code: 'EPERM',
+npm warn cleanup       syscall: 'rmdir',
+npm warn cleanup       path: 'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\@sentry\\nextjs\\node_modules\\@sentry\\core\\build'
+npm warn cleanup     }
+npm warn cleanup   ],
+npm warn cleanup   [
+npm warn cleanup     'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\@sentry\\node',
+npm warn cleanup     [Error: EPERM: operation not permitted, rmdir 'C:\Users\Usuario\Desktop\JSMastery\learning_saas_app\node_modules\@sentry\node\node_modules'] {
+npm warn cleanup       errno: -4048,
+npm warn cleanup       code: 'EPERM',
+npm warn cleanup       syscall: 'rmdir',
+npm warn cleanup       path: 'C:\\Users\\Usuario\\Desktop\\JSMastery\\learning_saas_app\\node_modules\\@sentry\\node\\node_modules'
+npm warn cleanup     }
+npm warn cleanup   ]
+npm warn cleanup ]
+npm error code ECONNRESET
+npm error syscall read
+npm error errno -4077
+npm error network read ECONNRESET
+npm error network This is a problem related to network connectivity.
+npm error network In most cases you are behind a proxy or have bad network settings.
+npm error network
+npm error network If you are behind a proxy, please make sure that the
+npm error network 'proxy' config is set properly.  See: 'npm help config'
+npm error A complete log of this run can be found in: C:\Users\Usuario\AppData\Local\npm-cache\_logs\2025-06-10T04_03_01_857Z-debug-0.log

@@ -6,6 +6,7 @@ import Lottie, { LottieRefCurrentProps } from "lottie-react"
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
 import soundwaves from '@/constants/soundwaves.json'
+import { addToSessionHistory } from "@/lib/actions/companion.actions"
 
 enum CallStatus {
 	INACTIVE = 'INACTIVE',
@@ -36,7 +37,11 @@ const CompanionComponent = ({ subject, topic, name, userName, userImage, voice, 
 	useEffect(() => {
 		const onCallStart = () => setCallStatus(CallStatus.ACTIVE)
 
-		const onCallEnd = () => setCallStatus(CallStatus.FINISHED)
+		const onCallEnd = () => {
+			setCallStatus(CallStatus.FINISHED)
+
+			addToSessionHistory(companionId)
+		}
 
 		const onMessage = (message: Message) => {
 			if (message.type === 'transcript' && message.transcriptType === 'final') {
@@ -141,19 +146,26 @@ const CompanionComponent = ({ subject, topic, name, userName, userImage, voice, 
 				</div>
 			</section>
 			<section className="transcript">
-				<div className="transcipt-message no-scrollbar">
-					{
-						messages.map((message,index) => {
-							if (message.role === 'assistant') {
-								return (
-									<p key={index} className="max-sm:text-sm">{name.split(' ')[0].replace('/[.,]/g', '')}: {message.content}</p>
-								)
-							}else {
-								return <p key={index} className="max-sm:text-sm text-primary">{userName}: {message.content}</p>
-							}
-						})
-					}
+				<div className="transcript-message no-scrollbar">
+					{messages.map((message, index) => {
+						if (message.role === 'assistant') {
+							return (
+								<p key={index} className="max-sm:text-sm">
+									{
+										name
+											.split(' ')[0]
+											.replace('/[.,]/g, ', '')
+									}: {message.content}
+								</p>
+							)
+						} else {
+							return <p key={index} className="text-primary max-sm:text-sm">
+								{userName}: {message.content}
+							</p>
+						}
+					})}
 				</div>
+
 				<div className="transcript-fade" />
 			</section>
 		</section>
