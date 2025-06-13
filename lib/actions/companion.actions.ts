@@ -100,7 +100,7 @@ export const getUserSessions = async (userId: string, limit = 10) => {
   const { data, error } = await supabase
     .from("session_history")
     .select(`companions:companion_id (*)`)
-    .eq('user_id', userId)
+    .eq("user_id", userId)
     .order("created_at", { ascending: false })
     .limit(limit);
 
@@ -115,7 +115,7 @@ export const getUserCompanions = async (userId: string) => {
   const { data, error } = await supabase
     .from("companions")
     .select()
-    .eq('author', userId)
+    .eq("author", userId);
 
   if (error)
     throw new Error(error?.message || "Failed to fetch user companions");
@@ -125,10 +125,38 @@ export const getUserCompanions = async (userId: string) => {
 
 export const deleteCompanion = async (id: string) => {
   const supabase = createSupabaseClient();
-  const { error } = await supabase
-    .from("companions")
-    .delete()
-    .eq("id", id);
+  const { error } = await supabase.from("companions").delete().eq("id", id);
 
   if (error) throw new Error(error?.message || "Failed to delete companion");
+};
+
+export const newCompanionPermissions = async () => {
+  const { userId, has } = await auth();
+  const supabase = createSupabaseClient();
+
+  let limit = 0;
+
+  if (has({ plan: "pro" })) {
+    return true;
+  } else if (has({ feature: "3_companion_limit" })) {
+    limit = 3;
+  } else if (has({ feature: "10_companion_limit" })) {
+    limit = 10;
+  }
+
+  const {data,error} = await supabase
+    .from('companions')
+    .select('id', {count:'exact'})
+    .eq('author',userId)
+
+    if(error) throw new Error(error.message)
+
+      const companionCount = data?.length
+
+    if(companionCount >= limit){
+      return false
+    }else {
+      return true
+    }
+
 };
