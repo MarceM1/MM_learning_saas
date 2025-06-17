@@ -10,6 +10,7 @@ const Page = async () => {
   const companions = await getAllCompanions({ limit: 3 });
   const recentSessionsCompanions = await getRecentSessions(10);
 
+  console.log('companions: ',companions)
 
   const { userId } = await auth()
 
@@ -36,6 +37,7 @@ const Page = async () => {
             {...companion}
             color={getSubjectColor(companion.subject)}
             bookmarked={bookmarkedIds.includes(companion.id)}
+           
           />
         ))}
       </section>

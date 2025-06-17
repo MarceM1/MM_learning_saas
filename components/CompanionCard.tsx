@@ -14,7 +14,9 @@ interface CompanionCardProps {
   subject: string
   duration: number
   color: string
-  bookmarked: boolean
+  bookmarked?: boolean,
+  views?: number
+  bookmarks?: number
 }
 
 const CompanionCard = ({ id,
@@ -23,7 +25,9 @@ const CompanionCard = ({ id,
   subject,
   duration,
   color,
-  bookmarked
+  bookmarked,
+  views,
+  bookmarks
 }: CompanionCardProps) => {
 
   console.log('bookmarked: ', bookmarked)
@@ -48,9 +52,22 @@ const CompanionCard = ({ id,
       </div>
       <h2 className='text-2xl font-bold'>{name}</h2>
       <p className="text-sm">{topic}</p>
-      <div className="flex items-center gap-2">
-        <Image src={'/icons/clock.svg'} width={13.5} height={13.5} alt='duration' />
-        <p className="text-sm">{duration} minutes</p>
+      <div className="flex justify-between items-center">
+        <div className="flex items-center gap-2">
+          <Image src={'/icons/clock.svg'} width={13.5} height={13.5} alt='duration' />
+          <p className="text-sm">{duration} minutes</p>
+        </div>
+        <div className="flex items-center subject-badge">
+          <div className="flex  gap-1">
+            <Image src={'/icons/library.svg'} width={13.5} height={13.5} alt='views' className=""/>
+          {bookmarks}
+          </div> 
+          <div className="border border-white border-r-2 h-4 mx-2"/>
+          <div className="flex  gap-1">
+            <Image src={'/icons/eye.svg'} width={13.5} height={13.5} alt='views' className=""/>
+          {views}
+          </div>
+        </div>
       </div>
       <Link href={`/companions/${id}`} className='w-full'>
         <button className="btn-primary w-full justify-center">Launch Lesson</button>

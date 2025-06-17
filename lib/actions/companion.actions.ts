@@ -51,10 +51,49 @@ export const getAllCompanions = async ({
 
   if (error) throw new Error(error?.message || "Failed to fetch companions");
 
-  return companions;
+  // const companionIds = companions.map((companion) => companion.id);
+
+  const { data: viewsData, error: viewsError } = await supabase
+    .from("session_history")
+    .select("companion_id");
+
+  if (viewsError)
+    throw new Error(viewsError?.message || "Failed to fetch companions");
+
+  const viewsMap: Record<string, number> = {};
+
+  viewsData?.forEach(({ companion_id }) => {
+    viewsMap[companion_id] = (viewsMap[companion_id] || 0) + 1;
+  });
+
+  const { data: bookmarksData, error: bookmarksError } = await supabase
+    .from("bookmarks")
+    .select("companion_id");
+
+  if (bookmarksError) throw new Error(bookmarksError.message);
+
+  const bookmarksMap: Record<string, number> = {};
+  bookmarksData?.forEach(({ companion_id }) => {
+    bookmarksMap[companion_id] = (bookmarksMap[companion_id] || 0) + 1;
+  });
+
+  const companionsWithCounts = companions.map((companion) => ({
+    ...companion,
+    views: viewsMap[companion.id] || 0,
+    bookmarks: bookmarksMap[companion.id] || 0,
+  }));
+
+  return companionsWithCounts;
 };
 
-export const getCompanion = async (id: string) => {
+/*************  ✨ Windsurf Command ⭐  *************/
+/**
+ * Fetches a single companion by id
+ * @param id The id of the companion to fetch
+ * @returns The companion or undefined if not found
+ */
+
+/*******  1435e7d5-d813-4329-b69a-0db0aa41bea4  *******/export const getCompanion = async (id: string) => {
   const supabase = createSupabaseClient();
 
   const { data, error } = await supabase
@@ -195,7 +234,9 @@ export const removeBookmark = async (companionId: string, path: string) => {
   return data;
 };
 
-export const getBookmarkedCompanions = async (userId: string): Promise<Companion[]>=> {
+export const getBookmarkedCompanions = async (
+  userId: string
+): Promise<Companion[]> => {
   const supabase = createSupabaseClient();
   const { data, error } = await supabase
     .from("bookmarks")
