@@ -65,6 +65,10 @@ interface Avatar {
   className?: string;
 }
 
+type BookmarkWithCompanion = {
+  companions: Companion;
+};
+
 
 interface SavedMessage {
   role: "user" | "system" | "assistant";

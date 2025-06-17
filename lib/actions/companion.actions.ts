@@ -2,6 +2,7 @@
 
 import { auth } from "@clerk/nextjs/server";
 import { createSupabaseClient } from "@/lib/supabase";
+import { revalidatePath } from "next/cache";
 
 export const createCompanion = async (formData: CreateCompanion) => {
   const { userId: author } = await auth();
@@ -144,19 +145,64 @@ export const newCompanionPermissions = async () => {
     limit = 10;
   }
 
-  const {data,error} = await supabase
-    .from('companions')
-    .select('id', {count:'exact'})
-    .eq('author',userId)
+  const { data, error } = await supabase
+    .from("companions")
+    .select("id", { count: "exact" })
+    .eq("author", userId);
 
-    if(error) throw new Error(error.message)
+  if (error) throw new Error(error.message);
 
-      const companionCount = data?.length
+  const companionCount = data?.length;
 
-    if(companionCount >= limit){
-      return false
-    }else {
-      return true
-    }
+  if (companionCount >= limit) {
+    return false;
+  } else {
+    return true;
+  }
+};
 
+export const addBookmark = async (companionId: string, path: string) => {
+  const { userId } = await auth();
+  const supabase = await createSupabaseClient();
+
+  const { data, error } = await supabase.from("bookmarks").insert({
+    companion_id: companionId,
+    user_id: userId,
+  });
+
+  if (error) throw new Error(error.message);
+
+  revalidatePath(path);
+  return data;
+};
+
+export const removeBookmark = async (companionId: string, path: string) => {
+  const { userId } = await auth();
+
+  if (!userId) return;
+
+  const supabase = await createSupabaseClient();
+
+  const { data, error } = await supabase
+    .from("bookmarks")
+    .delete()
+    .eq("companion_id", companionId)
+    .eq("user_id", userId);
+
+  if (error) throw new Error(error.message);
+
+  revalidatePath(path);
+  return data;
+};
+
+export const getBookmarkedCompanions = async (userId: string): Promise<Companion[]>=> {
+  const supabase = createSupabaseClient();
+  const { data, error } = await supabase
+    .from("bookmarks")
+    .select(`companions:companion_id (*)`)
+    .eq("user_id", userId);
+  if (error) {
+    throw new Error(error.message);
+  }
+  return data.map(({ companions }) => companions);
 };

@@ -1,8 +1,9 @@
 import CompanionCard from '@/components/CompanionCard'
 import SearchInput from '@/components/SearchInput'
 import SubjectFilter from '@/components/SubjectFilter'
-import { getAllCompanions } from '@/lib/actions/companion.actions'
+import { getAllCompanions, getBookmarkedCompanions } from '@/lib/actions/companion.actions'
 import { getSubjectColor } from '@/lib/utils'
+import { auth } from '@clerk/nextjs/server'
 import React from 'react'
 
 const companionsPage = async ({ searchParams }: SearchParams) => {
@@ -13,7 +14,13 @@ const companionsPage = async ({ searchParams }: SearchParams) => {
 
   const companions = await getAllCompanions({ subject, topic })
 
-  console.log(companions)
+  const { userId } = await auth()
+
+  // console.log(companions)
+  const bookmarkedCompanions = await getBookmarkedCompanions(userId!)
+  const bookmarkedIds = bookmarkedCompanions
+    .map((bookmark) => bookmark?.id)
+    .filter(Boolean);
 
   return (
     <main>
@@ -27,7 +34,9 @@ const companionsPage = async ({ searchParams }: SearchParams) => {
       <section className="companions-grid">
         {companions.map((companion) => (
           <CompanionCard key={companion.id} {...companion}
-          color={getSubjectColor(companion.subject)}
+            color={getSubjectColor(companion.subject)}
+            bookmarked={bookmarkedIds.includes(companion.id)}
+
           />
         ))}
       </section>
